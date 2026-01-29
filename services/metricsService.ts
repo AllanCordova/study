@@ -26,6 +26,8 @@ export const metricsService = {
       const updatedHistory = [newSession, ...currentHistory];
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory));
 
+      window.dispatchEvent(new Event("metrics-updated"));
+
       console.log("Sessão salva com sucesso:", newSession);
     } catch (error) {
       console.error("Erro ao salvar métricas:", error);

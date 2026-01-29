@@ -5,6 +5,7 @@ import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { SettingsModal } from "@/components/SettingsModal";
 import "./globals.scss";
+import { MetricsProvider } from "@/context/MetricsContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,12 +34,14 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen bg-[var(--bg-main)]">
           <SettingsProvider>
-            <Header />
-            <SettingsModal />
-            <main className="flex-1 flex flex-col items-center justify-center">
-              {children}
-            </main>
-            <Footer />
+            <MetricsProvider>
+              <Header />
+              <SettingsModal />
+              <main className="flex-1 flex flex-col items-center justify-center">
+                {children}
+              </main>
+              <Footer />
+            </MetricsProvider>
           </SettingsProvider>
         </div>
       </body>

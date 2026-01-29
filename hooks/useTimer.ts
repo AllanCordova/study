@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import { metricsService } from "@/services/metricsService";
 import { SessionType } from "@/types/metrics";
+import { useMetrics } from "@/context/MetricsContext";
 
 export const useTimer = (initialTimeInSeconds: number, mode: SessionType) => {
   const [timeLeft, setTimeLeft] = useState(initialTimeInSeconds);
   const [isActive, setIsActive] = useState(false);
 
   const originalDuration = useRef(initialTimeInSeconds);
+  const { registerSession } = useMetrics();
 
   useEffect(() => {
     if (!isActive) {
@@ -28,7 +29,7 @@ export const useTimer = (initialTimeInSeconds: number, mode: SessionType) => {
     } else if (timeLeft === 0 && isActive) {
       setIsActive(false);
 
-      metricsService.saveSession(originalDuration.current, mode);
+      registerSession(timeLeft, mode);
     }
 
     return () => {
