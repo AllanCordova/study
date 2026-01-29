@@ -12,15 +12,3 @@ export async function GET() {
     );
   }
 }
-
-export async function POST(request: Request) {
-  const body = await request.json();
-  const { name, level, image_path } = body;
-
-  await pool.query(
-    "INSERT INTO persons (name, level, image_path) VALUES ($1, $2, $3)",
-    [name, level, image_path],
-  );
-
-  return NextResponse.json({ message: "Criado com sucesso" }, { status: 201 });
-}
