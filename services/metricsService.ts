@@ -60,4 +60,10 @@ export const metricsService = {
       },
     );
   },
+
+  getFocusCycles(): number {
+    const data = this.getHistory();
+    const cycles = data.filter((s) => s.type === "focus");
+    return cycles.length;
+  },
 };
