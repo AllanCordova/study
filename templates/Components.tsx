@@ -21,6 +21,7 @@
  * - Keep components small. If it gets too big, break it down.
  * 6. Preferences:
  * - Never use comments in lines the codes
+ * - alway use labels and data-testid to use in possibles integration tests
  * ============================================================================
  */
 

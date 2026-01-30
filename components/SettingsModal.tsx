@@ -41,6 +41,7 @@ export const SettingsModal = () => {
           </h2>
           <button
             onClick={closeSettings}
+            aria-label="Close settings"
             className="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors"
           >
             ✕
@@ -50,7 +51,10 @@ export const SettingsModal = () => {
         <section className="flex flex-col gap-[var(--spacing-sm)]">
           <label className="text-[var(--font-size-base)] font-medium text-[var(--text-primary)]">
             Focus Duration:{" "}
-            <span className="text-[var(--primary-color)]">
+            <span
+              data-testid="focus-display-value"
+              className="text-[var(--primary-color)]"
+            >
               {focusMinutes} min
             </span>
           </label>
@@ -75,6 +79,7 @@ export const SettingsModal = () => {
 
           <input
             type="range"
+            aria-label="Focus Duration Slider"
             min="1"
             max="90"
             value={focusMinutes}
@@ -89,7 +94,10 @@ export const SettingsModal = () => {
         <section className="flex flex-col gap-[var(--spacing-sm)]">
           <label className="text-[var(--font-size-base)] font-medium text-[var(--text-primary)]">
             Break Duration:{" "}
-            <span className="text-[var(--primary-color)]">
+            <span
+              data-testid="break-display-value"
+              className="text-[var(--primary-color)]"
+            >
               {breakMinutes} min
             </span>
           </label>
@@ -114,6 +122,7 @@ export const SettingsModal = () => {
 
           <input
             type="range"
+            aria-label="Break Duration Slider"
             min="1"
             max="45"
             value={breakMinutes}
