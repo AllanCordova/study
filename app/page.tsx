@@ -30,7 +30,7 @@ export default function Home() {
             w-full max-w-7xl
           "
         >
-          <section className="flex flex-col items-center flex-1 order-2 lg:order-1">
+          <section className="flex flex-col items-center flex-1 lg:order-1">
             <div className="mb-[var(--spacing-lg)]">
               <ModeToggle currentMode={mode} onModeChange={setMode} />
             </div>
@@ -48,7 +48,7 @@ export default function Home() {
             </p>
           </section>
 
-          <aside className="flex justify-center flex-1 order-1 lg:order-2">
+          <aside className="flex justify-center flex-1 lg:order-2">
             <Avatar />
           </aside>
         </div>
