@@ -1,5 +1,7 @@
+import { useMetrics } from "@/context/MetricsContext";
 import { SessionType } from "@/types/metrics";
 import { Book, Coffee } from "lucide-react";
+import { Loading } from "../ui/Loading";
 
 interface ModeToggleProps {
   currentMode: SessionType;
@@ -7,6 +9,10 @@ interface ModeToggleProps {
 }
 
 export const ModeToggle = ({ currentMode, onModeChange }: ModeToggleProps) => {
+  const { breakCycles, focusCycles, isLoading } = useMetrics();
+
+  if (isLoading) return <Loading />;
+
   return (
     <div
       className="
@@ -14,7 +20,7 @@ export const ModeToggle = ({ currentMode, onModeChange }: ModeToggleProps) => {
         p-[var(--spacing-xs)]
         bg-[var(--bg-surface)]
         border-[var(--border-thin)] border-[var(--border-color-soft)]
-        rounded-[var(--radius-full)]
+        rounded-[var(--radius-md)]
         w-fit
         mb-[var(--spacing-lg)]
       "
@@ -22,10 +28,10 @@ export const ModeToggle = ({ currentMode, onModeChange }: ModeToggleProps) => {
       <button
         onClick={() => onModeChange("focus")}
         className={`
-          flex items-center gap-[var(--spacing-xs)]
-          py-[var(--spacing-sm)] px-[var(--spacing-lg)]
-          text-[var(--font-size-sm)] font-bold
-          rounded-[var(--radius-full)]
+          flex flex-col items-center justify-center
+          min-w-[100px]
+          py-[var(--spacing-sm)] px-[var(--spacing-md)]
+          rounded-[var(--radius-sm)]
           transition-all duration-300
           ${
             currentMode === "focus"
@@ -34,17 +40,22 @@ export const ModeToggle = ({ currentMode, onModeChange }: ModeToggleProps) => {
           }
         `}
       >
-        <Book size={16} />
-        Focus
+        <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none mb-[var(--spacing-xs)]">
+          {focusCycles} Cycles
+        </span>
+        <div className="flex items-center gap-[var(--spacing-xs)]">
+          <Book size={16} />
+          <span className="text-[var(--font-size-sm)] font-bold">Focus</span>
+        </div>
       </button>
 
       <button
         onClick={() => onModeChange("break")}
         className={`
-          flex items-center gap-[var(--spacing-xs)]
-          py-[var(--spacing-sm)] px-[var(--spacing-lg)]
-          text-[var(--font-size-sm)] font-bold
-          rounded-[var(--radius-full)]
+          flex flex-col items-center justify-center
+          min-w-[100px]
+          py-[var(--spacing-sm)] px-[var(--spacing-md)]
+          rounded-[var(--radius-sm)]
           transition-all duration-300
           ${
             currentMode === "break"
@@ -53,8 +64,13 @@ export const ModeToggle = ({ currentMode, onModeChange }: ModeToggleProps) => {
           }
         `}
       >
-        <Coffee size={16} />
-        Break
+        <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none mb-[var(--spacing-xs)]">
+          {breakCycles} Cycles
+        </span>
+        <div className="flex items-center gap-[var(--spacing-xs)]">
+          <Coffee size={16} />
+          <span className="text-[var(--font-size-sm)] font-bold">Break</span>
+        </div>
       </button>
     </div>
   );
