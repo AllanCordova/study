@@ -55,7 +55,10 @@ export const Avatar = () => {
           )}
         </div>
 
-        <h2 className="text-[var(--font-size-xl)] font-bold text-[var(--text-primary)] mb-[var(--spacing-xs)]">
+        <h2
+          className="text-[var(--font-size-xl)] font-bold text-[var(--text-primary)] mb-[var(--spacing-xs)]"
+          data-testid="current-avatar"
+        >
           {currentAvatar.name}
         </h2>
 
@@ -76,7 +79,7 @@ export const Avatar = () => {
                 {userCycles}
               </strong>
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1" data-testid="next-avatar">
               Next: {nextAvatar.name} <Lock size={12} />
             </span>
           </div>
@@ -93,7 +96,10 @@ export const Avatar = () => {
           </p>
         </div>
       ) : (
-        <div className="text-[var(--primary-color)] font-bold mt-2 animate-pulse">
+        <div
+          className="text-[var(--primary-color)] font-bold mt-2 animate-pulse"
+          data-testid="max-lvl"
+        >
           MAXIMUM LEVEL REACHED!
         </div>
       )}

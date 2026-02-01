@@ -22,6 +22,7 @@ export const Header = () => {
       <Link
         href="/"
         className="flex items-center gap-[var(--spacing-sm)] group"
+        data-testid="home-link"
       >
         <div className="text-[var(--primary-color)] transition-transform group-hover:scale-110">
           <Timer size={24} strokeWidth={2.5} />
@@ -42,6 +43,7 @@ export const Header = () => {
             hover:text-[var(--primary-color)]
             transition-colors
           "
+          data-testid="metrics-link"
         >
           <BarChart2 size={20} />
           <span>Metrics</span>

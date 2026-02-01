@@ -20,6 +20,7 @@ export const Footer = () => {
           text-[var(--text-secondary)]
           font-medium
         "
+        data-testid="copy"
       >
         &copy; {currentYear} Pomodoro App. All rights reserved.
       </p>
