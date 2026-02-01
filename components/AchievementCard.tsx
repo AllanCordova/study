@@ -74,6 +74,7 @@ export const AchievementCard = ({ data }: AchievementCardProps) => {
             <span
               className="text-xl font-bold"
               style={{ color: SAFE_COLORS.textPrimary }}
+              data-testid="focus-data-display"
             >
               {timeDisplay}
             </span>
@@ -96,6 +97,7 @@ export const AchievementCard = ({ data }: AchievementCardProps) => {
             <span
               className="text-xl font-bold"
               style={{ color: SAFE_COLORS.textPrimary }}
+              data-testid="focus-data-sessions"
             >
               {data.totalFocusSessions}
             </span>

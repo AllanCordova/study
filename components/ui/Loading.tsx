@@ -20,7 +20,7 @@ export const Loading = () => {
           size={64}
         />
         <span className="mt-4 text-[var(--text-secondary)] animate-pulse">
-          Summoning hero...
+          Loading...
         </span>
       </div>
     </div>
