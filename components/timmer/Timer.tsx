@@ -51,6 +51,7 @@ export const Timer = ({ seconds, mode }: PropType) => {
               tracking-tighter
               leading-none
             "
+            data-testid="timer-data"
           >
             {timerService.formatTime(timeLeft)}
           </span>
