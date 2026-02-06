@@ -1,0 +1,44 @@
+{
+  "characters": [
+    {
+      "name": "Batman",
+      "image_path": "/assets/persons/batman.webp"
+    },
+    {
+      "name": "Sherlock Holmes",
+      "image_path": "/assets/persons/sherlock.webp"
+    },
+    {
+      "name": "Hermione Granger",
+      "image_path": "/assets/persons/hermione.webp"
+    },
+    {
+      "name": "Spock",
+      "image_path": "/assets/persons/spock.webp"
+    },
+    {
+      "name": "Yoda",
+      "image_path": "/assets/persons/yoda.webp"
+    },
+    {
+      "name": "Rick Sanchez",
+      "image_path": "/assets/persons/rick_sanchez.webp"
+    },
+    {
+      "name": "L (Death Note)",
+      "image_path": "/assets/persons/l_death_note.webp"
+    },
+    {
+      "name": "Tony Stark",
+      "image_path": "/assets/persons/ironman.webp"
+    },
+    {
+      "name": "Gandalf",
+      "image_path": "/assets/persons/gandalf.webp"
+    },
+    {
+      "name": "The Doctor (Doctor Who)",
+      "image_path": "/assets/persons/the_doctor.webp"
+    }
+  ]
+}
