@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSettings } from "@/context/SettingsContext";
-import { Settings, Timer, BarChart2 } from "lucide-react";
+import { Settings, Timer, BarChart2, Trophy, Image as ImageIcon } from "lucide-react";
 
 export const Header = () => {
   const { openSettings } = useSettings();
@@ -34,6 +34,40 @@ export const Header = () => {
       </Link>
 
       <nav className="flex items-center gap-[var(--spacing-md)]">
+        <Link
+          href="/achievements"
+          className="
+            flex items-center gap-[var(--spacing-xs)]
+            text-[var(--font-size-sm)]
+            text-[var(--text-secondary)]
+            hover:text-[var(--primary-color)]
+            transition-colors
+          "
+          data-testid="achievements-link"
+        >
+          <Trophy size={20} />
+          <span>Achievements</span>
+        </Link>
+
+        <div className="h-4 w-[1px] bg-[var(--border-color-soft)]" />
+
+        <Link
+          href="/image-selector"
+          className="
+            flex items-center gap-[var(--spacing-xs)]
+            text-[var(--font-size-sm)]
+            text-[var(--text-secondary)]
+            hover:text-[var(--primary-color)]
+            transition-colors
+          "
+          data-testid="image-selector-link"
+        >
+          <ImageIcon size={20} />
+          <span>Image Selector</span>
+        </Link>
+
+        <div className="h-4 w-[1px] bg-[var(--border-color-soft)]" />
+
         <Link
           href="/metrics"
           className="

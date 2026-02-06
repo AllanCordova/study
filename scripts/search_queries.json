@@ -1,0 +1,165 @@
+{
+  "characters": {
+    "Batman": {
+      "queries": [
+        "Batman character portrait",
+        "Batman DC Comics official art",
+        "Batman character illustration",
+        "Batman fan art high quality",
+        "Batman digital art",
+        "Batman portrait artwork",
+        "Batman concept art",
+        "Batman character design",
+        "Batman comic book art",
+        "Batman superhero portrait"
+      ]
+    },
+    "Sherlock Holmes": {
+      "queries": [
+        "Sherlock Holmes character portrait",
+        "Sherlock Holmes official art",
+        "Sherlock Holmes character illustration",
+        "Sherlock Holmes fan art high quality",
+        "Sherlock Holmes digital art",
+        "Sherlock Holmes portrait artwork",
+        "Sherlock Holmes detective illustration",
+        "Sherlock Holmes character design",
+        "Sherlock Holmes BBC portrait",
+        "Sherlock Holmes classic illustration"
+      ]
+    },
+    "Hermione Granger": {
+      "queries": [
+        "Hermione Granger character portrait",
+        "Hermione Granger Harry Potter official art",
+        "Hermione Granger character illustration",
+        "Hermione Granger fan art high quality",
+        "Hermione Granger digital art",
+        "Hermione Granger portrait artwork",
+        "Hermione Granger concept art",
+        "Hermione Granger character design",
+        "Hermione Granger wizard portrait",
+        "Hermione Granger Emma Watson art"
+      ]
+    },
+    "Spock": {
+      "queries": [
+        "Spock character portrait",
+        "Spock Star Trek official art",
+        "Spock character illustration",
+        "Spock fan art high quality",
+        "Spock digital art",
+        "Spock portrait artwork",
+        "Spock concept art",
+        "Spock character design",
+        "Spock Vulcan portrait",
+        "Spock Leonard Nimoy art"
+      ]
+    },
+    "Yoda": {
+      "queries": [
+        "Yoda character portrait",
+        "Yoda Star Wars official art",
+        "Yoda character illustration",
+        "Yoda fan art high quality",
+        "Yoda digital art",
+        "Yoda portrait artwork",
+        "Yoda concept art",
+        "Yoda character design",
+        "Yoda Jedi Master portrait",
+        "Yoda Lucasfilm official art"
+      ]
+    },
+    "Rick Sanchez": {
+      "queries": [
+        "Rick Sanchez character portrait",
+        "Rick Sanchez Rick and Morty official art",
+        "Rick Sanchez character illustration",
+        "Rick Sanchez fan art high quality",
+        "Rick Sanchez digital art",
+        "Rick Sanchez portrait artwork",
+        "Rick Sanchez concept art",
+        "Rick Sanchez character design",
+        "Rick Sanchez scientist portrait",
+        "Rick Sanchez Adult Swim art"
+      ]
+    },
+    "L (Death Note)": {
+      "queries": [
+        "L Death Note character portrait",
+        "L Death Note official art",
+        "L Death Note character illustration",
+        "L Death Note fan art high quality",
+        "L Death Note digital art",
+        "L Death Note portrait artwork",
+        "L Death Note anime art",
+        "L Death Note character design",
+        "L Death Note manga art",
+        "L Lawliet portrait"
+      ]
+    },
+    "Tony Stark": {
+      "queries": [
+        "Tony Stark character portrait",
+        "Tony Stark Iron Man official art",
+        "Tony Stark character illustration",
+        "Tony Stark fan art high quality",
+        "Tony Stark digital art",
+        "Tony Stark portrait artwork",
+        "Tony Stark concept art",
+        "Tony Stark character design",
+        "Tony Stark Marvel Comics art",
+        "Tony Stark Iron Man portrait"
+      ]
+    },
+    "Gandalf": {
+      "queries": [
+        "Gandalf character portrait",
+        "Gandalf Lord of the Rings official art",
+        "Gandalf character illustration",
+        "Gandalf fan art high quality",
+        "Gandalf digital art",
+        "Gandalf portrait artwork",
+        "Gandalf concept art",
+        "Gandalf character design",
+        "Gandalf wizard portrait",
+        "Gandalf Tolkien art"
+      ]
+    },
+    "The Doctor (Doctor Who)": {
+      "queries": [
+        "Doctor Who character portrait",
+        "Doctor Who official art",
+        "Doctor Who character illustration",
+        "Doctor Who fan art high quality",
+        "Doctor Who digital art",
+        "Doctor Who portrait artwork",
+        "Doctor Who concept art",
+        "Doctor Who character design",
+        "The Doctor BBC portrait",
+        "Doctor Who Time Lord art"
+      ]
+    }
+  },
+  "query_templates": [
+    "{name} character portrait",
+    "{name} official art",
+    "{base_name} character illustration",
+    "{name} fan art high quality",
+    "{name} digital art",
+    "{base_name} portrait artwork",
+    "{name} concept art",
+    "{name} character design"
+  ],
+  "site_suffixes": [
+    "site:{site}",
+    "character portrait site:{site}",
+    "official art site:{site}"
+  ],
+  "base_filters": {
+    "size": "large",
+    "type": "photo",
+    "color": "color",
+    "quality": "high"
+  }
+}

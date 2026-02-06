@@ -7,14 +7,17 @@ export const useAvatarProgression = () => {
 
   const [currentAvatar, setCurrentAvatar] = useState<Person | null>(null);
   const [nextAvatar, setNextAvatar] = useState<Person | null>(null);
+  const [allPersons, setAllPersons] = useState<Person[]>([]);
   const [isLoadingApi, setIsLoadingApi] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (isHistoryLoading) return;
 
     async function resolveProgression() {
       try {
-        const response = await fetch("http://localhost:3000/api/persons");
+        setError(null);
+        const response = await fetch("/api/persons");
         if (!response.ok) throw new Error("Erro na API");
         const data: Person[] = await response.json();
 
@@ -31,8 +34,10 @@ export const useAvatarProgression = () => {
 
         setCurrentAvatar(current);
         setNextAvatar(next);
+        setAllPersons(sortedPersons);
       } catch (error) {
         console.error("Progression logic error:", error);
+        setError(error instanceof Error ? error.message : "Unknown error");
       } finally {
         setIsLoadingApi(false);
       }
@@ -44,7 +49,9 @@ export const useAvatarProgression = () => {
   return {
     currentAvatar,
     nextAvatar,
+    allPersons,
     userCycles: focusCycles,
     isLoading: isHistoryLoading || isLoadingApi,
+    error,
   };
 };
