@@ -5,6 +5,56 @@ import { join } from "path";
 
 const execAsync = promisify(exec);
 
+/**
+ * @swagger
+ * /api/images/save:
+ *   post:
+ *     summary: Save selected images for characters
+ *     description: Downloads and stores selected images in the public assets folder.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - selections
+ *             properties:
+ *               selections:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   required:
+ *                     - characterName
+ *                     - imageUrl
+ *                     - filename
+ *                   properties:
+ *                     characterName:
+ *                       type: string
+ *                       example: Batman
+ *                     imageUrl:
+ *                       type: string
+ *                       example: https://example.com/batman.jpg
+ *                     filename:
+ *                       type: string
+ *                       example: batman.webp
+ *     responses:
+ *       200:
+ *         description: Save results
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 results:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *       400:
+ *         description: Invalid selections payload
+ *       500:
+ *         description: Save error
+ */
 export async function POST(request: NextRequest) {
   try {
     const { selections } = await request.json();

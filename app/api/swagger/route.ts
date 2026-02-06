@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { getApiDocs } from "@/swagger.config";
+import { getSwaggerSpec } from "@/lib/swagger";
 
 export async function GET() {
-  const spec = await getApiDocs();
+  const spec = getSwaggerSpec();
   return NextResponse.json(spec);
 }

@@ -5,13 +5,11 @@ import pool from "@/lib/db";
  * @swagger
  * /api/persons:
  *   get:
- *     summary: Retrieve all persons/characters
- *     description: Returns a list of all persons stored in the database with their id, name, level, and image_path
- *     tags:
- *       - Persons
+ *     summary: List all persons
+ *     description: Returns the list of persons stored in the database.
  *     responses:
  *       200:
- *         description: Successful response
+ *         description: List of persons
  *         content:
  *           application/json:
  *             schema:
@@ -21,30 +19,18 @@ import pool from "@/lib/db";
  *                 properties:
  *                   id:
  *                     type: integer
- *                     description: Unique identifier for the person
  *                     example: 1
  *                   name:
  *                     type: string
- *                     description: Name of the person/character
- *                     example: "Batman"
+ *                     example: Batman
  *                   level:
  *                     type: integer
- *                     description: Current level of the person
- *                     example: 0
+ *                     example: 10
  *                   image_path:
  *                     type: string
- *                     description: Path to the person's image
- *                     example: "/assets/persons/batman.webp"
+ *                     example: /assets/persons/batman.webp
  *       500:
- *         description: Internal server error
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 error:
- *                   type: string
- *                   example: "Erro ao buscar dados"
+ *         description: Server error
  */
 export async function GET() {
   try {
